@@ -4,7 +4,8 @@
 
 > Simple Image Editor that can be used to adjust the image values like brightness, contrast, hue, saturation, grayscale and sepia. Image editors allow one to quickly edit pictures after they have been captured for enhancing them or completely changing their look. Using a combination of various values, one can give an image a completely new look.
 
-
+<img src='./img/desk.png' width='500px'/>
+<img src='./img/mobil.png' width='300px'/>
 
 
 ## Built With
@@ -15,7 +16,7 @@
 
 ## Live Demo (if available)
 
-[Start Game](https://muhmmdusama.github.io/)
+[Live Demo](https://muhmmdusama.github.io/)
 
 ## Authors
 
