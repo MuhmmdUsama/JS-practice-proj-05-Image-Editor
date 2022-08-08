@@ -11,6 +11,7 @@
 ## Built With
 
 - HTML
+- Canvas 
 - Css
 - JavaScript
 
