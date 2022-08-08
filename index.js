@@ -12,17 +12,19 @@ let filters = document.querySelectorAll('ul li input'),
   download = document.getElementById('download'),
   reset = document.querySelector('span'),
   img = document.getElementById('img'),
-  imgBox = document.querySelector('.img-box');
+  imgBox = document.querySelector('.img-box'),
+  // ############# Canvas
+  canvas = document.getElementById('canvas'),
+  ctx = canvas.getContext('2d');
 
 window.onload = () => {
-  //   filters.style.visibility = 'hidden';
   download.style.display = 'none';
   reset.style.display = 'none';
-  //   imgBox.style.display = 'none';
 };
 
 upload.addEventListener('change', uploadImg);
 reset.addEventListener('click', resetValue);
+download.addEventListener('click', downloadImg);
 
 function uploadImg() {
   resetValue();
@@ -33,11 +35,22 @@ function uploadImg() {
     const upload_Image = reader.result;
     img.src = upload_Image;
   });
+
   reader.readAsDataURL(this.files[0]);
+
+  // ### Replace img with canvas
+  img.onload = () => {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    img.style.display = 'none';
+  };
+  // canvas.width = img.width;
+  // canvas.height = img.height;
 }
 
 function resetValue() {
-  img.style.filter = 'none';
+  ctx.filter = 'none';
   saturate.value = '100';
   contrast.value = '100';
   brightness.value = '100';
@@ -45,11 +58,18 @@ function resetValue() {
   grayscale.value = '0';
   blur.value = '0';
   hue.value = '0';
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+}
+
+function downloadImg() {
+  download.href = canvas.toDataURL();
+  // canvas.width = img.width;
+  // canvas.height = img.height;
 }
 
 filters.forEach((filter) => {
   filter.addEventListener('input', () => {
-    img.style.filter = `
+    ctx.filter = `
     saturate(${saturate.value}%)
     contrast(${contrast.value}%)
     brightness(${brightness.value}%)
@@ -58,5 +78,6 @@ filters.forEach((filter) => {
     blur(${blur.value}px)
     hue-rotate(${hue.value}deg)
     `;
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
   });
 });

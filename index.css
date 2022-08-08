@@ -27,13 +27,13 @@ body {
   align-items: center;
 }
 
-/* .img-box {
-    padding: 2px;
+.img-box {
+    padding: 1px;
     border: 1px #fff dashed;
     border-radius: 4px;
-  } */
+  }
 
-.img img {
+.img img,canvas {
   max-width: 45vw;
   max-height: 60vh;
   border-radius: 0.3rem;
@@ -60,7 +60,7 @@ body {
 .filters ul li {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .filters ul li label {
@@ -102,8 +102,8 @@ body {
     border-radius: 4px;
   }
 
-  .img img {
-    max-width: 65vw;
+  .img img,canvas {
+    max-width: 75vw;
     max-height: 60vh;
     border-radius: 0.3rem;
   }

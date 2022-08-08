@@ -10,7 +10,10 @@
   <body>
     <div class="container">
       <div class="img">
-        <div class="img-box"><img id="img" /></div>
+        <div class="img-box">
+          <img id="img" />
+          <canvas id="canvas" height="1080" width="1920"></canvas>
+        </div>
 
         <div class="upload">
           <label for="upload">Upload</label>
@@ -69,7 +72,7 @@
           </li>
 
           <li>
-            <a download="true" id="download">Download</a>
+            <a download="img-edited" id="download">Download</a>
             <span>Reset</span>
           </li>
         </ul>
