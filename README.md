@@ -16,7 +16,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo](https://muhmmdusama.github.io/)
+[Live Demo](https://muhmmdusama.github.io/JS-practice-proj-05-Image-Editor/)
 
 ## Authors
 
